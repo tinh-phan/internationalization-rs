@@ -16,7 +16,7 @@ fn read_locales() -> Translations {
     let mut translations: Translations = HashMap::new();
 
     let build_directory = std::env::var("PWD").unwrap();
-    let locales = format!("{}/**/locales/**/*.json", build_directory);
+    let locales = format!("{}/resources/locales/**/*.json", build_directory);
     println!("Reading {}", &locales);
 
     for entry in glob(&locales).expect("Failed to read glob pattern") {
